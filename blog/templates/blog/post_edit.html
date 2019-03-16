@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <p><select name="done1">
+          <option selected="selected">Задача: </option>
+            <option value="1">Выполнена</option>
+            <option value="0">Не выполнена</option>
+      </select></p>
+        <div align="center">
+            <button type="submit" class="save btn btn-default">Save</button>
+        </div>
+
+    </form>
+{% endblock %}
+
